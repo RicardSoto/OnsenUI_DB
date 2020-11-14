@@ -1,0 +1,13 @@
+.listItem {
+    width: 100%;
+    height: 40px;
+    display: -webkit-flex;
+    -webkit-flex-direction:row;
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    justify-content: space-between;
+    color: azure;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  }
+

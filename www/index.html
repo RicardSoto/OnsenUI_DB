@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+  <script src="components/loader.js"></script>
+  <script src="lib/onsenui/js/onsenui.min.js"></script>
+  <script type="text/javascript" src="js/webSQL.js"></script>
+
+  <link rel="stylesheet" href="components/loader.css">
+  <link rel="stylesheet" href="lib/onsenui/css/onsenui.css">
+  <link rel="stylesheet" href="lib/onsenui/css/onsen-css-components.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script>
+    ons.ready(function() {
+      console.log("Onsen UI is ready!");
+    });
+
+    if (ons.platform.isIPhoneX()) {
+      document.documentElement.setAttribute('onsflag-iphonex-portrait', '');
+      document.documentElement.setAttribute('onsflag-iphonex-landscape', '');
+    }
+  </script>
+</head>
+<body style="background-color: rgb(79, 139, 141);">
+  <ons-page">
+    <div class="toolbar toolbar--material">
+
+      <div class="toolbar__center toolbar--material__center">
+        Mis Notas
+      </div>
+      <div class="toolbar__right toolbar--material__right">
+        <ons-button onclick="PopUp()"><ons-icon icon="plus"></ons-icon></ons-button>
+      </div>
+    </div>
+    <br>
+    <div style="text-align: center;height: 100%;">
+      <div id="notes" style="text-align: center;width: 100%;"></div>
+    </div>
+    <template id="dialog.html">
+        <ons-dialog id="my-dialog">
+            <div style="text-align: center; padding: 10px;">
+                <p>
+                    Edit Text
+                </p>
+                <p id="editText">
+                    This is a simple dialog!
+                </p>
+                <p>
+                    <ons-button onclick="editD('my-dialog')">SAVE</ons-button>
+                    <ons-button onclick="hideDialog('my-dialog')" style="background-color: orangered;">CANCEL
+                    </ons-button>
+                </p>
+            </div>
+        </ons-dialog>
+    </template>
+    <template id="dialogC.html">
+        <ons-dialog id="my-dialogC">
+            <div style="text-align: center; padding: 10px;">
+                <p>
+                    New Note
+                </p>
+                <p id="editTextC">
+                    This is a simple dialog!
+                </p>
+                <p>
+                    <ons-button onclick="createD()">SAVE</ons-button>
+                    <ons-button onclick="hideDialogC('my-dialog')" style="background-color: orangered;">CANCEL
+                    </ons-button>
+                </p>
+            </div>
+        </ons-dialog>
+    </template>
+</ons-page>
+</body>
+</html>
